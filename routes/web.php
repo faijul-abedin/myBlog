@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'frontEnd.home')->name('home');
+Route::view('/about', 'frontEnd.about')->name('about');
+Route::view('/contact', 'frontEnd.contact')->name('contact');
 
 Route::get('/hello', function () {
     return view('hello');

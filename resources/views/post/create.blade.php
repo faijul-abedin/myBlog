@@ -11,11 +11,13 @@
     <h1>
         I am from Post Create View.
 
-        <a href="<?php echo route('post.index') ?>">All Posts</a>
+        {{-- <a href="<?php echo route('post.index') ?>">All Posts</a> --}}
+
+        <a href="{{ route('post.index') }}">All Posts</a>
     </h1>
 
-    <form action="<?php echo url('post/store'); ?>" method="POST">
-    <?php echo csrf_field(); ?>
+    <form action="{{ route(post.store) }}" method="POST">
+    @csrf
         <input type="text" name="title" placeholder="Tittle Here"><br><br>
         <textarea name="details" cols="30" rows="10" placeholder="Details Here"></textarea><br><br>
         <button>Submit</button>
